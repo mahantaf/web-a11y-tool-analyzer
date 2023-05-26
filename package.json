@@ -1,0 +1,24 @@
+{
+  "name": "web-a11y-tool-analyzer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@axe-core/puppeteer": "^4.7.1",
+    "@qualweb/core": "^0.7.33",
+    "accessibility-checker": "^3.1.48",
+    "accessibility-insights-report": "^4.6.6",
+    "axe-core": "^4.7.1",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "config": "^3.3.9",
+    "puppeteer": "^20.2.1"
+  }
+}
