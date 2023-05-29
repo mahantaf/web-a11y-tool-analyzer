@@ -1,0 +1,1 @@
+"use strict";window.wafer.ready((function(){window.wafer.on("form:submit",(function(e){var o=e.elem;if((void 0===o?{}:o).getAttribute("data-test-horoscopeselect")){var t=document.getElementById("horoscope-select");window.rapidInstance&&window.rapidInstance.beaconClick("app-hor",t&&t.value||"",0,{elm:"dropdown",itc:1},"")}}))}));

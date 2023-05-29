@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)https://www.craigslist.org/static/www/localStorage-092e9f9e2f09450529e744902aa7cdb3a5cc868d.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        (function () {
+            var originRe = /^(https:\/\/[^/.]+\.craigslist\.org)(\/|$)/i;
+            var match = document.referrer.match(originRe);
+            if (!match) {
+                return;
+            }
+            var referrerOrigin = match[1];
+
+            var localStorage = false;
+            var localStorageIsAvailable = false;
+            try {
+                localStorage = window.localStorage;
+                localStorage.setItem('key', JSON.stringify('value'));
+                if (JSON.parse(localStorage.getItem('key')) === 'value') {
+                    localStorage.removeItem('key');
+                    if (localStorage.getItem('key') === null) {
+                        localStorageIsAvailable = true;
+                    }
+                }
+
+                if (!localStorageIsAvailable) {
+                    return;
+                }
+
+                window.addEventListener('message', function (e) {
+                    var match = e.origin.match(originRe);
+                    if(!match){
+                        return;
+                    }
+
+                    var data = JSON.parse(e.data);
+                    var messageAction = data.action;
+                    var messageData = data.data;
+                    if (referrerOrigin.indexOf(e.origin.toLowerCase()) === 0) {
+                        switch (messageAction) {
+                            case 'clear':
+                                localStorage.clear();
+                                return;
+
+                            case 'update':
+                                messageData.deleted.forEach(function (k) {
+                                    localStorage.removeItem(k);
+                                });
+                                Object.keys(messageData.updates).forEach(function (k) {
+                                    localStorage.setItem(k, messageData.updates[k]);
+                                });
+                                return;
+
+                            case 'set':
+                                localStorage.setItem(messageData.key, messageData.value);
+                                return;
+
+                            case 'remove':
+                                localStorage.removeItem(messageData.key);
+                        }
+                    }
+                });
+
+                var data = {};
+                for (var k, i = 0, end = localStorage.length; i < end; i++) {
+                    k = localStorage.key(i);
+                    data[k] = localStorage.getItem(k);
+                }
+                window.parent.postMessage(JSON.stringify({ action: 'init', data: data }), referrerOrigin);
+            } catch (e) {
+            }
+        })();
+    </script>
+</head>
+<body>
+
+</body></html>

@@ -1,0 +1,33 @@
+.home-page-search{position:relative;width:100%;max-width:1440px;margin:0 auto;padding-top:8px;text-align:center}
+.home-page-search__wrap{position:relative;width:600px;margin:0 auto}
+.home-page-search__form-container{position:relative;width:448px;height:50px;margin:0 auto 16px}
+.home-page-search__form-submit{position:absolute;top:50%;left:24px;width:24px;height:24px;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:0;color:transparent}
+.home-page-search__form-submit .icon{width:100%;height:100%}
+.home-page-search__form .text-field-v2{padding:12px 48px 12px 64px;background:#f7f7f7;border-radius:22px;border:1px solid #757575}
+.home-page-search__form .text-field-v2 .text-field-v2__hint{color:#555;left:64px}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap{font-size:0}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap:after{display:none}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap .text-field-v2__input{padding:0}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap .text-field-v2__input:focus{-webkit-box-shadow:0 0 0 2px #fff;box-shadow:0 0 0 2px #fff;outline:2px dotted #000}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap .text-field-v2__input-icon{right:-32px;bottom:0}
+.home-page-search__keyword-list{margin:0 20px;font-size:0;text-align:center}
+.home-page-search__keyword-list-item{display:inline-block;padding:0 4px 8px 4px}
+@media only screen and (min-width:768px) and (max-width:1440px){.home-page-search{padding-top:.55555556vw}
+.home-page-search__wrap{width:41.66666667vw}
+.home-page-search__form-container{width:31.11111111vw;height:3.47222222vw;margin-bottom:1.11111111vw}
+.home-page-search__form-submit{left:1.66666667vw;width:1.66666667vw;height:1.66666667vw}
+.home-page-search__form .text-field-v2{padding:.83333333vw 3.33333333vw .83333333vw 4.44444444vw;border-radius:1.52777778vw}
+.home-page-search__form .text-field-v2 .text-field-v2__hint{left:4.44444444vw}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap .text-field-v2__input-icon{right:-2.22222222vw}
+.home-page-search__keyword-list{margin:0vw 1.38888889vw}
+.home-page-search__keyword-list-item{padding:0vw .27777778vw .55555556vw .27777778vw}
+}
+@media only screen and (max-width:767px){.home-page-search{padding-top:2.22222222vw}
+.home-page-search__wrap{width:100%}
+.home-page-search__form-container{width:100%;height:11.66666667vw;margin:0vw 0vw 4.44444444vw 0vw;padding:0vw 1.11111111vw}
+.home-page-search__form-submit{left:5.55555556vw;width:4.44444444vw;height:4.44444444vw}
+.home-page-search__form .text-field-v2{padding:2.77777778vw 12.22222222vw 2.77777778vw 11.11111111vw;border-radius:6.11111111vw}
+.home-page-search__form .text-field-v2 .text-field-v2__hint{left:11.11111111vw}
+.home-page-search__form .text-field-v2 .text-field-v2__input-wrap .text-field-v2__input-icon{right:-8.88888889vw}
+.home-page-search__keyword-list{margin:0}
+}

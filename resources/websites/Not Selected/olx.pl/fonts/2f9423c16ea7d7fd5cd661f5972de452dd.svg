@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
+    <defs>
+        <path id="9uklvm7d5a" d="M46.52 10.839v47.303l-2.444 2.437H2.443c-.959-.95-1.49-1.487-2.443-2.437V2.437C.953 1.487 1.484.951 2.443 0h33.21l10.866 10.839z"/>
+        <path id="30xj1lq5ic" d="M30.215 0L30.215 27.482 27.766 29.905 0 29.905z"/>
+        <path id="0trtim597e" d="M10.96 10.792L0 10.792 0 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-1208.000000, -778.000000) translate(1208.000000, 778.000000) translate(10.039861, 4.159737) translate(0.000000, 0.001768)">
+                        <mask id="9xftvyklsb" fill="#fff">
+                            <use xlink:href="#9uklvm7d5a"/>
+                        </mask>
+                        <path fill="#FFCE32" d="M-2.975 -2.973L49.494 -2.973 49.494 63.552 -2.975 63.552z" mask="url(#9xftvyklsb)"/>
+                    </g>
+                    <g transform="translate(-1208.000000, -778.000000) translate(1208.000000, 778.000000) translate(10.039861, 4.159737) translate(16.301735, 30.428830)">
+                        <mask id="xakxy8cccd" fill="#fff">
+                            <use xlink:href="#30xj1lq5ic"/>
+                        </mask>
+                        <path fill="#D8B87A" d="M-2.981 -2.957L33.196 -2.957 33.196 32.862 -2.981 32.862z" mask="url(#xakxy8cccd)"/>
+                    </g>
+                    <g transform="translate(-1208.000000, -778.000000) translate(1208.000000, 778.000000) translate(10.039861, 4.159737) translate(35.555939, 0.000000)">
+                        <mask id="t9fyoxyzzf" fill="#fff">
+                            <use xlink:href="#0trtim597e"/>
+                        </mask>
+                        <path fill="#F8FBCF" d="M-3 -2.961L13.96 -2.961 13.96 13.752 -3 13.752z" mask="url(#t9fyoxyzzf)"/>
+                    </g>
+                    <g fill="#003035" fill-rule="nonzero">
+                        <path d="M27.691 0L27.691 3.575 0 3.575 0 0zM27.691 5.66L27.691 9.235 0 9.235 0 5.66zM27.691 11.321L27.691 14.896 0 14.896 0 11.321zM27.691 16.981L27.691 20.556 0 20.556 0 16.981zM27.691 22.641L27.691 26.216 0 26.216 0 22.641z" transform="translate(-1208.000000, -778.000000) translate(1208.000000, 778.000000) translate(10.039861, 4.159737) translate(10.753520, 18.851776)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

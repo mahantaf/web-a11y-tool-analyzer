@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Dark_theme/05_Spinner/Hover</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Dark_theme/05_Spinner/Hover" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M11.607,9.19088675 C11.7017989,9.07036145 11.8466599,9 12,9 C12.1533401,9 12.2982011,9.07036145 12.393,9.19088675 L16.864,14.8818868 C16.9822948,15.0323734 17.0042926,15.2371894 16.9206526,15.4093644 C16.8370125,15.5815395 16.6624155,15.6908868 16.471,15.6908868 L7.529,15.6908868 C7.3375845,15.6908868 7.16298748,15.5815395 7.07934745,15.4093644 C6.99570742,15.2371894 7.01770521,15.0323734 7.136,14.8818868 L11.607,9.19088675 Z" id="spinner" fill="#FFFFFF" fill-rule="nonzero" transform="translate(12.000000, 12.345443) rotate(180.000000) translate(-12.000000, -12.345443) "></path>
+    </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61.5" height="54.5">
+    <defs>
+        <filter id="a" width="56" height="49" x="5.5" y="5.5" filterUnits="userSpaceOnUse">
+            <feOffset dx=".438" dy=".899" in="SourceAlpha"/>
+            <feGaussianBlur result="blurOut" stdDeviation="1.414"/>
+            <feFlood flood-color="#565656" result="floodOut"/>
+            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+            <feComponentTransfer>
+                <feFuncA slope=".29" type="linear"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="b" width="60" height="51" x=".5" y=".5" filterUnits="userSpaceOnUse">
+            <feOffset dy="1" in="SourceAlpha"/>
+            <feGaussianBlur result="blurOut" stdDeviation="1"/>
+            <feFlood flood-color="#717171" result="floodOut"/>
+            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+            <feComponentTransfer>
+                <feFuncA slope=".54" type="linear"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="c" x1="0%" x2="58.779%" y1="80.902%" y2="0%">
+            <stop offset="40%" stop-color="#5698D0"/>
+            <stop offset="100%" stop-color="#7FB1DB"/>
+        </linearGradient>
+    </defs>
+    <path fill="#FBFBFB" fill-rule="evenodd" d="M7.355 6.202l43.946 1.449-.781 33.607-43.946-1.449.781-33.607z" filter="url(#a)"/>
+    <path fill="#FBFBFB" fill-rule="evenodd" stroke="#D6D6D6" d="M5.679 10.273l43.52-6.313 5.065 33.227-43.52 6.313-5.065-33.227z" filter="url(#b)"/>
+    <path fill="#5698D0" fill-rule="evenodd" d="M8.368 11.877l38.428-5.093 4.673 28.243-38.84 5.717-4.261-28.867z"/>
+    <path fill="url(#c)" stroke="#226298" d="M8.368 11.877l38.428-5.093 4.673 28.243-38.84 5.717-4.261-28.867z"/>
+    <path fill="#9BC0E1" fill-rule="evenodd" d="M40.368 16.263l-16.192 2.961L26.259 30.6l-.84.154-2.238-12.226 13.227-2.419-.549-2.997.84-.154.549 2.997 2.964-.542.156.85zm-13.265 6.748a1.87 1.87 0 0 1 1.488-2.18c1.007-.185 1.977.494 2.164 1.512a1.868 1.868 0 0 1-1.488 2.18 1.87 1.87 0 0 1-2.164-1.512zm6.549-1.957l2.152 1.079 1.039 5.669-9.669 1.769 1.938-4.134 2.062.503 2.478-4.886zm3.077-3.191l.84-.153 2.229 12.171-13.228 2.42.549 2.996-.84.154-.549-2.997-2.964.542-.155-.849 16.191-2.961-2.073-11.323z"/>
+    <path fill="#226298" fill-rule="evenodd" d="M39.368 15.263l-16.192 2.961L25.259 29.6l-.84.154-2.238-12.226 13.227-2.419-.549-2.997.84-.154.549 2.998 2.964-.543.156.85zm-13.265 6.748a1.87 1.87 0 0 1 1.488-2.18 1.87 1.87 0 0 1 2.164 1.512 1.868 1.868 0 0 1-1.488 2.18 1.87 1.87 0 0 1-2.164-1.512zm6.549-1.956l2.153 1.077 1.038 5.671-9.669 1.768 1.938-4.134 2.062.503 2.478-4.885zm3.078-3.192l.839-.153 2.229 12.171L25.57 31.3l.549 2.998-.84.153-.548-2.997-2.965.542-.155-.849 16.191-2.961-2.072-11.323z"/>
+</svg>

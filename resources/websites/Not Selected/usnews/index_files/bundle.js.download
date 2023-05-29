@@ -1,0 +1,189 @@
+(function () {
+  'use strict';
+
+  // BannerUtils version 3.2.0
+  function getBrowser() {
+    // desktop browsers as of 2019-10-04
+    var browserslist = ['other', 'blink', 'chrome', 'safari', 'opera', 'ie', 'edge', 'firefox'];
+    var browser = 0;
+
+    if ('WebkitAppearance' in document.documentElement.style) {
+      browser = 1; // chrome/safari/opera/edge/firefox
+
+      if (/google/i.test(window.navigator.vendor)) browser = 2;
+      if (/apple/i.test(window.navigator.vendor)) browser = 3;
+      if (!!window.opr && !!window.opr.addons || !!window.opera || / OPR\//.test(window.navigator.userAgent)) browser = 4;
+    }
+
+    if (
+    /*@cc_on!@*/
+    !!document.documentMode) browser = 5; // ie 6-11
+
+    if (browser !== 5 && !!window.StyleMedia) browser = 6;
+    if (typeof InstallTrigger !== 'undefined' || 'MozAppearance' in document.documentElement.style) browser = 7;
+    return browserslist[browser];
+  }
+  getBrowser();
+  function es5() {
+    return parseInt('010', 10) === 10 && function () {
+      return !this;
+    }() && !!(Date && Date.prototype && Date.prototype.toISOString); // IE10, FF21, CH23, SF6, OP15, iOS7, AN4.4
+  }
+  ({
+    // https://bit.ly/32ZIpgo
+    traceOn: window.console.log.bind(window.console, '%s'),
+    traceOff: function traceOff() {},
+    trace: window.console.log.bind(window.console, '%s'),
+
+    set debug(bool) {
+      this._debug = bool;
+      bool ? this.trace = this.traceOn : this.trace = this.traceOff;
+    },
+
+    get debug() {
+      return this._debug;
+    }
+
+  });
+  function domIds(scope) {
+    if (scope === void 0) {
+      scope = document;
+    }
+
+    var all = scope.getElementsByTagName('*');
+    var haveIds = {};
+    var i = all.length;
+
+    while (i--) {
+      if (all[i].id) {
+        var safeId = all[i].id.replace(/-|:|\./g, '_');
+        haveIds[safeId] = all[i];
+      }
+    }
+
+    return haveIds;
+  }
+
+  var ad_width = 728;
+  var ad_height = 90;
+  var Banner = {
+    init: function init() {
+      /*
+       * Setup banner
+       * ------------------------------------------
+       */
+      var dom = domIds();
+      /*
+       * Animations
+       * ------------------------------------------
+       */
+
+      var animation = function animation() {
+        gsap.set('#content', {
+          autoAlpha: 1
+        });
+        gsap.registerPlugin(TextPlugin);
+        var tl = gsap.timeline({});
+        tl // OVERLAY TOOL
+        // .set("#overlay", {alpha:0.5}, "<")
+        // FRAME 1
+        // IN
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        // Set attributes
+        .set("#base_line_block", {
+          height: 4,
+          backgroundColor: "#66A9E2"
+        }, "<").set("#amex_card", {
+          left: 618,
+          top: 12,
+          transformOrigin: "top left"
+        }, "<").set("#cta", {
+          left: 385,
+          top: 61,
+          width: 88,
+          height: 25
+        }, "<") // // Frame 1
+        .fromTo(["#f1_bkg"], {
+          x: 28,
+          y: 6,
+          scale: 0.58
+        }, {
+          x: 0,
+          y: 0,
+          scale: 0.5,
+          ease: "power3.out",
+          duration: 15
+        }, "<") // Borders
+        .from("#border_blue_holder", {
+          x: ad_width - 270,
+          width: 270,
+          ease: "power3.out",
+          duration: 3
+        }, "<").from("#border_blue", {
+          x: -ad_width + 270,
+          ease: "power3.out",
+          duration: 3
+        }, "<").fromTo("#offer_box", {
+          drawSVG: "42% 42%"
+        }, {
+          drawSVG: "142% 42%",
+          ease: "power3.out",
+          duration: 1
+        }, "<+=0.5").from("#welcone_offer_text", {
+          y: "+=30",
+          ease: "power3.out",
+          duration: 1
+        }, "<+=0.1") // Title Text
+        .from(["#f1_txt1"], {
+          alpha: 0,
+          y: "+=5",
+          duration: 0.6
+        }, "<+=0.5") // FRAME 2
+        // IN
+        // Credit Card
+        .from("#amex_card", {
+          y: ad_height + 14,
+          ease: "power3.out",
+          duration: 2
+        }, "<").from("#amex_card", {
+          rotation: "-15deg",
+          ease: "power3.out",
+          duration: 1.5
+        }, "<+0.25") // CTA 
+        .from("#cta", {
+          y: "+=10",
+          alpha: 0,
+          duration: 1
+        }, "<") // Bottom Bar
+        .from("#base_line_block", {
+          y: "+=10",
+          ease: "power3.out",
+          duration: 1
+        }, "<") // Legal
+        .from(["#card_legal"], {
+          alpha: 0,
+          duration: 1
+        }, "<");
+      };
+      /*
+       * Run banner or fallback to backup
+       * ------------------------------------------
+       */
+
+
+      if (es5()) {
+        animation();
+        dom.content.addEventListener('click', function () {
+          return window.open(window.clickTag);
+        });
+      } else {
+        dom.backup.classList.add('backup');
+      }
+    }
+  };
+
+  window.onload = function () {
+    return window.requestAnimationFrame(Banner.init);
+  };
+
+})();
