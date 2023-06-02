@@ -45,7 +45,7 @@ exports.run = async (url) => {
     }
     await browser.close();
 
-    fs.writeFileSync(`./run_results.json`, JSON.stringify(output));
+    // fs.writeFileSync(`./run_results.json`, JSON.stringify(output));
     return output;
 }
 

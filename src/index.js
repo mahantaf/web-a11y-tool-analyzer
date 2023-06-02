@@ -1,20 +1,29 @@
+const config = require('config');
+const fs = require('fs');
 const runner = require('./runner');
 const oracle = require('./oracle');
+const path = require("path");
 
 (async () => {
-    // TODO: We will change these two URLs once we serve our websites on a host
+    const baseURL = config.get('websitesBaseURL');
+    const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../resources', 'operator_result.json')));
 
-    const originalURL = 'http://localhost:3000';
-    const mutatedURL = 'http://localhost:4000';
-    try {
-        // TODO: Can be done at the same time using Promise.all or Promise.allResolved
+    const result = {}
+    for (const website of Object.keys(operatorResult)) {
+        result[website] = {}
+        for (const mutant of Object.keys(operatorResult[website])) {
+            if (operatorResult[website][mutant] === 1) {
 
-        const originalRunResults = await runner.run(originalURL);
-        const mutatedRunResults = await runner.run(mutatedURL);
+                const originalURL = `${baseURL}/${website}/mutants/${mutant}/index.html`;
+                const mutatedURL = `${baseURL}/${website}/mutants/${mutant}/${mutant}.html`;
 
-        oracle.run(originalRunResults, mutatedRunResults);
+                // TODO: Following two ops can be done at the same time using Promise.all() or Promise.allResolved()
+                const originalRunResults = await runner.run(originalURL);
+                const mutatedRunResults = await runner.run(mutatedURL);
 
-    } catch (e) {
-        console.log(e);
+                result[website][mutant] = oracle.run(originalRunResults, mutatedRunResults);
+            }
+        }
     }
+    fs.writeFileSync(`./run_results.json`, JSON.stringify(result));
 })();

@@ -31,19 +31,25 @@ const compare = (originalIssues, mutatedIssues) => {
 }
 
 exports.run = (original, mutated) => {
-
+    const result = {};
     for (const tool of Object.keys(original.results)) {
+
+        result[tool] = {};
+
         const originalElementIssues = findMutatedElementIssues(original.results[tool].failures);
         const mutatedElementIssues = findMutatedElementIssues(mutated.results[tool].failures)
 
-        console.log(`---------------${tool}---------------`);
-
         const newIssues = compare(originalElementIssues.failures, mutatedElementIssues.failures);
+
+        result[tool]['originalIssues'] = originalElementIssues;
+        result[tool]['mutatedIssues'] = mutatedElementIssues;
+        result[tool]['newIssues'] = newIssues;
+
         if (newIssues.length) {
-            console.log(`${tool} killed the mutant :)`);
-            // console.log(newIssues);
+            result[tool]['killed'] = 1;
         } else {
-            console.log(`${tool} did not kill the mutant :(`);
+            result[tool]['killed'] = 0;
         }
     }
+    return result;
 }

@@ -132,8 +132,9 @@ dist
 # Project Specific
 resources/**
 websites/
-result/
-results/
+**result**
+
+
 
 .DS_Store
 .idea/
