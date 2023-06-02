@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="12px" viewBox="0 0 24 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>stroke-left</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="stroke-left" transform="translate(1.000000, 1.000000)">
+            <polygon id="Triangle-2" fill="#FFFFFF" points="11 0 20.9 9 1.1 9"></polygon>
+            <path d="M0.503736413,9.59442935 C7.54161005,9.6829144 14.5794837,9.77139946 21.6173573,9.85988451" id="Path" fill="#FFFFFF"></path>
+            <polyline id="Stroke-1-Copy-2" stroke="#E8E9EE" stroke-width="1.5" transform="translate(11.000000, 5.000000) rotate(180.000000) translate(-11.000000, -5.000000) " points="0 0 11 10 22 0"></polyline>
+        </g>
+    </g>
+</svg>

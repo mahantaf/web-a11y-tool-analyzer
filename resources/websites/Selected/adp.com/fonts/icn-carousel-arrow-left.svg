@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>UI / Carousel_Arrow_Default Copy 3</title>
+    <g id="UI-/-Carousel_Arrow_Default-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill-rule="nonzero" cx="30" cy="30" r="30"></circle>
+        <circle id="Oval" fill-opacity="0.75" fill="#121C4E" cx="30" cy="30" r="30"></circle>
+        <circle id="Outline" stroke="#FFFFFF" stroke-width="4" opacity="0.75" cx="30" cy="30" r="28"></circle>
+        <g id="UI-/--Arrow_Dropdown" transform="translate(31.000000, 29.538462) rotate(-270.000000) translate(-31.000000, -29.538462) translate(22.000000, 24.000000)" fill="#FFFFFF">
+            <polygon id="Arrow" transform="translate(9.000000, 5.538462) scale(1, -1) rotate(-90.000000) translate(-9.000000, -5.538462) " points="5.39021341 14.5384615 3.46153846 12.6410409 10.6811116 5.53846154 3.46153846 -1.56411786 5.39021341 -3.46153846 14.5384615 5.53846154"></polygon>
+        </g>
+    </g>
+</svg>

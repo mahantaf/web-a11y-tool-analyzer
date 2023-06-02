@@ -1,0 +1,31 @@
+@font-face {
+  font-display: swap;
+  font-family: 'SamsungOne';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SamsungOne'), url('../fonts/SamsungOne-400.woff2') format('woff2'), url('../fonts/SamsungOne-400.woff') format('woff'), url('../fonts/SamsungOne-400.ttf') format('truetype'), url('../fonts/SamsungOne-400.eot#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SamsungOne';
+  font-style: normal;
+  font-weight: bold;
+  src: local('SamsungOne'), url('../fonts/SamsungOne-700.woff2') format('woff2'), url('../fonts/SamsungOne-700.woff') format('woff'), url('../fonts/SamsungOne-700.ttf') format('truetype'), url('../fonts/SamsungOne-700.eot#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SamsungSharpSans';
+  font-style: normal;
+  font-weight: bold;
+  src: local('SamsungSharpSans'), url('../fonts/SamsungSharpSansBd_1.woff2') format('woff2'), url('../fonts/SamsungSharpSansBd_1.woff') format('woff'), url('../fonts/SamsungSharpSansBd.eot#iefix') format('embedded-opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SamsungSharpSans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SamsungSharpSans'), url('../fonts/SamsungSharpSansBd_1.woff2') format('woff2'), url('../fonts/SamsungSharpSansBd_1.woff') format('woff'), url('../fonts/SamsungSharpSansBd.eot#iefix') format('embedded-opentype');
+}

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117" height="129" viewBox="0 0 117 129">
+    <defs>
+        <filter id="a" width="106.5%" height="110.1%" x="-2.2%" y="-2.5%" filterUnits="objectBoundingBox">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.00392156863 0 0 0 0 0.596078431 0 0 0 0 0.815686275 0 0 0 0.072435462 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="b" d="M85.569 68.185H.164V.083h85.405z"/>
+        <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#0AABE6"/>
+            <stop offset="100%" stop-color="#0198D0"/>
+        </linearGradient>
+        <path id="e" d="M92.47.104H0v77.248h92.47V.104z"/>
+        <linearGradient id="f" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#0198D0"/>
+            <stop offset="100%" stop-color="#0198D0"/>
+        </linearGradient>
+        <filter id="h" width="106.5%" height="110.1%" x="-2.2%" y="-2.5%" filterUnits="objectBoundingBox">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.00392156863 0 0 0 0 0.596078431 0 0 0 0 0.815686275 0 0 0 0.072435462 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="i" d="M85.569 68.185H.164V.083h85.405z"/>
+        <path id="k" d="M92.47.104H0v77.248h92.47V.104z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g filter="url(#a)">
+            <g transform="translate(3.788 3.026)">
+                <mask id="d" fill="#fff">
+                    <use xlink:href="#b"/>
+                </mask>
+                <path fill="url(#c)" d="M.165 68.185S-.734 18.2 52.255 7.99l.444-7.906 32.87 15.152-32.87 20.528v-5.046S12.352 26.927.165 68.185" mask="url(#d)"/>
+            </g>
+            <g transform="translate(0 .061)">
+                <mask id="g" fill="#fff">
+                    <use xlink:href="#e"/>
+                </mask>
+                <path fill="url(#f)" d="M59.773 7.098v7.56l-2.851.108c-.109.005-11.595.573-23.53 8.112-9.817 6.2-17.089 15.092-21.754 26.564 8.163-9.455 21.91-18.12 45.012-19.353l3.123-.167v4.71l24.65-15.734-24.65-11.8zM2.966 77.352H2.96l-1.31-.002-.882-.97c-.903-.994-.806-2.013-.704-3.091 3.069-32.16 18.238-47.98 30.422-55.588 9.644-6.02 18.856-7.96 23.358-8.577V4.368c0-2.43 1.737-4.265 4.04-4.265.671 0 1.34.159 1.988.469L90.01 15c1.446.692 2.363 1.966 2.451 3.408.088 1.442-.667 2.818-2.02 3.682L60.07 41.477c-.752.48-1.576.733-2.383.733-2.191 0-3.842-1.781-3.842-4.145V36.23c-38.346 3.383-46.262 29.729-47.79 37.9-.163.882-.602 3.222-3.088 3.222z" mask="url(#g)"/>
+            </g>
+        </g>
+        <g filter="url(#h)" transform="rotate(180 57.5 62.5)">
+            <g transform="translate(3.788 3.026)">
+                <mask id="j" fill="#fff">
+                    <use xlink:href="#i"/>
+                </mask>
+                <path fill="url(#c)" d="M.165 68.185S-.734 18.2 52.255 7.99l.444-7.906 32.87 15.152-32.87 20.528v-5.046S12.352 26.927.165 68.185" mask="url(#j)"/>
+            </g>
+            <g transform="translate(0 .061)">
+                <mask id="l" fill="#fff">
+                    <use xlink:href="#k"/>
+                </mask>
+                <path fill="url(#f)" d="M59.773 7.098v7.56l-2.851.108c-.109.005-11.595.573-23.53 8.112-9.817 6.2-17.089 15.092-21.754 26.564 8.163-9.455 21.91-18.12 45.012-19.353l3.123-.167v4.71l24.65-15.734-24.65-11.8zM2.966 77.352H2.96l-1.31-.002-.882-.97c-.903-.994-.806-2.013-.704-3.091 3.069-32.16 18.238-47.98 30.422-55.588 9.644-6.02 18.856-7.96 23.358-8.577V4.368c0-2.43 1.737-4.265 4.04-4.265.671 0 1.34.159 1.988.469L90.01 15c1.446.692 2.363 1.966 2.451 3.408.088 1.442-.667 2.818-2.02 3.682L60.07 41.477c-.752.48-1.576.733-2.383.733-2.191 0-3.842-1.781-3.842-4.145V36.23c-38.346 3.383-46.262 29.729-47.79 37.9-.163.882-.602 3.222-3.088 3.222z" mask="url(#l)"/>
+            </g>
+        </g>
+    </g>
+</svg>
