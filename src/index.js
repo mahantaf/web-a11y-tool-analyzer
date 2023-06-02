@@ -6,7 +6,7 @@ const path = require("path");
 
 (async () => {
     const baseURL = config.get('websitesBaseURL');
-    const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../resources', 'operator_result.json')));
+    const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../resources', 'mutation_result.json')));
 
     const result = {}
     for (const website of Object.keys(operatorResult)) {
