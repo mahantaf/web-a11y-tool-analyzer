@@ -1,2 +1,0 @@
-!function(){var o={en:2487233,au:2584859,uk:2584848};window.addEventListener("dummyformisdefined",(function(){window.MarketoStore.dummyForm.onSuccess((function(n){return function(n){console.log("Collecting drift sata from form submission"),console.log(n);var e=window.WIL.getSiteSlugLang(),r=o.hasOwnProperty(e)?o[e]:o.en;try{window.drift.api.collectFormData(n,{campaignId:r})}catch(o){console.log("Drift collect data error",o)}}(n),!1})),console.log("Dummyform onSuccess handler for drift set.")}))}();
-//# sourceMappingURL=drift-homepage.js.map
