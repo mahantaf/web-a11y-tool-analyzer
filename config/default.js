@@ -2,7 +2,7 @@ module.exports = {
     websitesBaseURL: 'http://127.0.0.1:8080/results',
     tools: {
         QualWeb: {
-            enable: true,
+            enable: false,
             plugins: {
                 adBlock: true,
                 stealth: true

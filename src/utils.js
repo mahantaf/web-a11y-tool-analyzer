@@ -16,7 +16,7 @@ exports.downloadHTML = async url => {
  * @param type Which is xpath or css-selector
  */
 exports.bundlePointerToHTML = async (node, page, html, type) => {
-    let element = null;
+    let element = { tagName: null, mutationId: null };
     let bundleTechnique = 'browser';
 
     const { pointer, htmlCode } = node;
@@ -125,8 +125,9 @@ const bundlePointerToHTMLStatic = (pointer, html, type) => {
         element = bundlePointerToHTMLStaticCSSSelector(pointer, currentContext);
     }
     return {
-        tagName: element?.get(0)?.tagName || element?.prop('tagName') || null,
-        mutationId: element?.get(0)?.attr('data-mutation-id') || element?.attr('data-mutation-id') || null
+        tagName: element?.prop('tagName') || element?.get(0)?.tagName || null,
+        mutationId: element?.attr('data-mutation-id') ||
+            (element?.get(0)?.attr ? element?.get(0)?.attr('data-mutation-id') : null) || null
     }
 }
 const bundlePointerToHTMLBrowser = async (pointer, page, type) => {
@@ -147,12 +148,23 @@ const bundlePointerToHTMLBrowser = async (pointer, page, type) => {
     }
 
     if (element) {
+        try {
+            return {
+                tagName: (await page.evaluate(el => el.tagName, element))?.toLowerCase(),
+                mutationId: await page.evaluate(el => el.getAttribute('data-mutation-id'), element)
+            }
+        } catch (e) {
+            return {
+                tagName: null,
+                mutationId: null
+            }
+        }
+    } else {
         return {
-            tagName: (await page.evaluate(el => el.tagName, element))?.toLowerCase(),
-            mutationId: await page.evaluate(el => el.getAttribute('data-mutation-id'), element)
+            tagName: null,
+            mutationId: null
         }
     }
-    return null;
 }
 const bundlePointerToHTMLTag = (htmlCode) => {
     const $ = cheerio.load(htmlCode);

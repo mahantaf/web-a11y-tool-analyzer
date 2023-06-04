@@ -19,6 +19,8 @@
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
     "config": "^3.3.9",
-    "puppeteer": "^20.2.1"
+    "puppeteer": "^20.2.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0"
   }
 }

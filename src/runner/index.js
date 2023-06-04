@@ -1,4 +1,5 @@
 const tools= require('../tools');
+const logger = require('../logger');
 const utils= require('../utils');
 
 const fs = require('fs');
@@ -20,32 +21,40 @@ const puppeteer = require("puppeteer");
  */
 
 exports.run = async (url) => {
-    const html = await utils.downloadHTML(url);
-
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-
-    await page.goto(url, { waitUntil: 'load', timeout: 30 * 1000 });
 
     const output = {
         url: url,
         timestamp: new Date(Date.now()),
         results: {}
     }
+    logger.info(`Tool runner for ${url}`);
+    try {
+        const html = await utils.downloadHTML(url);
 
-    for (const tool of Object.keys(tools)) {
-        if (config.get(`tools.${tool}.enable`)) {
-            const { runner, transformer } = tools[tool];
-            const result = await runner.run(url, html, transformer);
-            await bundleElements(tool, result, page, html);
-            // console.log(`------------${tool}------------`);
-            // analysis(result);
-            output.results[tool] = { failures: result };
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+
+        await page.goto(url, {waitUntil: 'load', timeout: 30 * 1000});
+
+        for (const tool of Object.keys(tools)) {
+            if (config.get(`tools.${tool}.enable`)) {
+                const {runner, transformer} = tools[tool];
+                try {
+                    logger.info(`Running ${tool}`);
+                    const result = await runner.run(url, html, transformer);
+                    logger.info(`Bundling pointers to elements`)
+                    await bundleElements(tool, result, page, html);
+                    output.results[tool] = {failures: result};
+                } catch (e) {
+                    output.results[tool] = {failures: []};
+                    logger.error(`Problem in running ${tool} at ${url}: ${e}`);
+                }
+            }
         }
+        await browser.close();
+    } catch (e) {
+        logger.error(`Problem in downloading and browsing at ${url}: ${e}`);
     }
-    await browser.close();
-
-    // fs.writeFileSync(`./run_results.json`, JSON.stringify(output));
     return output;
 }
 
