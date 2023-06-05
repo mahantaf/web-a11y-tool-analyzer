@@ -31,6 +31,14 @@ module.exports = {
             apiKey: "EXq9hMiB3114",
             reportType: "3",
             reportFormat: "xpath"
+        },
+        a11ywatchLite: {
+            enable: true,
+            reportFormat: "css-selector",
+        },
+        continuum: {
+            enable: true,
+            reportFormat: "css-selector",
         }
     }
 }

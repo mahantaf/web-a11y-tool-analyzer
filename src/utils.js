@@ -22,15 +22,16 @@ exports.bundlePointerToHTML = async (node, page, html, type) => {
 
     const { pointer, htmlCode } = node;
 
+
     if (pointer) {
         if (page) {
             element = await bundlePointerToHTMLBrowser(pointer, page, type);
         }
-        if (element.tagName === null) {
+        if (element?.tagName === null) {
             bundleTechnique = 'static';
             element = bundlePointerToHTMLStatic(pointer, html, type);
         }
-        if (element.tagName === null && htmlCode) {
+        if (element?.tagName === null && htmlCode) {
             bundleTechnique = 'tag';
             element = bundlePointerToHTMLTag(htmlCode);
         }

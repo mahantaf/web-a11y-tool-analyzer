@@ -70,9 +70,12 @@ const bundleElements = async (tool, result, page, html) => {
     const reportFormat = config.get(`tools.${tool}.reportFormat`);
     for (const failure of result)
         for (const node of failure?.nodes) {
-            const { tagName, mutationId } = await utils.bundlePointerToHTML(node, page, html, reportFormat);
-            node.pointerTag = tagName;
-            node.mutationId = mutationId;
+            const element = await utils.bundlePointerToHTML(node, page, html, reportFormat);
+            if (element) {
+                const{tagName,mutationId} = element;
+                  node.pointerTag = tagName;
+                  node.mutationId = mutationId;
+            }
         }
 }
 

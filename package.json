@@ -20,6 +20,13 @@
     "cheerio": "^1.0.0-rc.12",
     "config": "^3.3.9",
     "puppeteer": "^20.2.1",
+    "cucumber": "6.0.5",
+    "@continuum/continuum-javascript-community": "file:./lib/continuum-continuum-javascript-community-5.1.0.tgz",
+    "chromedriver": "^114.0.1",
+    "selenium-webdriver": "4.3.0",
+    "q": "1.5.1",
+    "global-agent": "2.1.8",
+    "@a11ywatch/a11ywatch": "^0.1.40",
     "uuid": "^9.0.0",
     "winston": "^3.9.0"
   }

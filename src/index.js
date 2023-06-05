@@ -22,6 +22,7 @@ const logger = require('./logger');
                 const mutatedURL = `${baseURL}/${website}/mutants/${mutant}/${mutant}.html`;
 
                 // TODO: Following two ops can be done at the same time using Promise.all() or Promise.allResolved()
+                console.log('url:'+originalURL);
                 const originalRunResults = await runner.run(originalURL);
                 const mutatedRunResults = await runner.run(mutatedURL);
 
