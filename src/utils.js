@@ -1,5 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const logger = require("./logger");
 
 exports.downloadHTML = async url => {
     const { data } = await axios.get(url);
@@ -22,7 +23,9 @@ exports.bundlePointerToHTML = async (node, page, html, type) => {
     const { pointer, htmlCode } = node;
 
     if (pointer) {
-        element = await bundlePointerToHTMLBrowser(pointer, page, type);
+        if (page) {
+            element = await bundlePointerToHTMLBrowser(pointer, page, type);
+        }
         if (element.tagName === null) {
             bundleTechnique = 'static';
             element = bundlePointerToHTMLStatic(pointer, html, type);
@@ -133,38 +136,35 @@ const bundlePointerToHTMLStatic = (pointer, html, type) => {
 const bundlePointerToHTMLBrowser = async (pointer, page, type) => {
     let element = null;
 
-    if (type === 'xpath') {
-        const elements = await page.$x(pointer);
-        if (elements.length > 0) {
-            element = elements?.[0];
-        }
-    } else if ("complex-css-selector") {
-        element = await page.$(pointer);
-    } else if ("css-selector") {
-        const elements = await page.$$(pointer);
-        if (elements.length > 0) {
-            element = elements?.[0];
-        }
-    }
+    const output = {
+        tagName: null,
+        mutationId: null
+    };
 
-    if (element) {
-        try {
-            return {
-                tagName: (await page.evaluate(el => el.tagName, element))?.toLowerCase(),
-                mutationId: await page.evaluate(el => el.getAttribute('data-mutation-id'), element)
+    try {
+        if (type === 'xpath') {
+            const elements = await page.$x(pointer);
+            if (elements.length > 0) {
+                element = elements?.[0];
             }
-        } catch (e) {
-            return {
-                tagName: null,
-                mutationId: null
+        } else if ("complex-css-selector") {
+            element = await page.$(pointer);
+        } else if ("css-selector") {
+            const elements = await page.$$(pointer);
+            if (elements.length > 0) {
+                element = elements?.[0];
             }
         }
-    } else {
-        return {
-            tagName: null,
-            mutationId: null
+
+        if (element) {
+            try {
+                output.tagName = (await page.evaluate(el => el.tagName, element))?.toLowerCase();
+                output.mutationId = await page.evaluate(el => el.getAttribute('data-mutation-id'), element);
+            } catch (e) { logger.error(`Problem in bundling elements: ${e}`); }
         }
-    }
+    } catch (e) { logger.error(`Problem in bundling elements: ${e}`); }
+
+    return output;
 }
 const bundlePointerToHTMLTag = (htmlCode) => {
     const $ = cheerio.load(htmlCode);

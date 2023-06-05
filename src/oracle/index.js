@@ -1,17 +1,17 @@
-const findMutatedElementIssues = (failures) => {
+const findMutatedElementIssues = (failures, mutantId) => {
     const output = {
         element: null,
         failures: []
     }
     const elementFailures = [];
     for (const failure of failures) {
-        const mutatedElement = failure.nodes.find(node => !!node.mutationId);
+        const mutatedElement = failure?.nodes?.find(node => !!node.mutationId);
         if (mutatedElement) {
             elementFailures.push({
-                code: failure.toolCode,
-                description: failure.description,
+                code: failure?.toolCode,
+                description: failure?.description,
                 tag: mutatedElement?.pointerTag,
-                html: mutatedElement?.htmlCode
+                html: mutatedElement?.htmlCode,
             });
         }
     }
@@ -27,17 +27,17 @@ const compare = (originalIssues, mutatedIssues) => {
     for (const issue of mutatedIssues)
         if (!originalIssues.find(i => i.code === issue.code))
             newIssues.push(issue);
-    return newIssues
+    return newIssues;
 }
 
-exports.run = (original, mutated) => {
+exports.run = (original, mutated, mutantId) => {
     const result = {};
     for (const tool of Object.keys(original.results)) {
 
         result[tool] = {};
 
-        const originalElementIssues = findMutatedElementIssues(original.results[tool].failures);
-        const mutatedElementIssues = findMutatedElementIssues(mutated.results[tool].failures)
+        const originalElementIssues = findMutatedElementIssues(original.results[tool].failures, mutantId);
+        const mutatedElementIssues = findMutatedElementIssues(mutated.results[tool].failures, mutantId);
 
         const newIssues = compare(originalElementIssues.failures, mutatedElementIssues.failures);
 

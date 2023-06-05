@@ -2,7 +2,7 @@ module.exports = {
     websitesBaseURL: 'http://127.0.0.1:8080/results',
     tools: {
         QualWeb: {
-            enable: false,
+            enable: true,
             plugins: {
                 adBlock: true,
                 stealth: true
@@ -18,11 +18,11 @@ module.exports = {
             reportFormat: "complex-css-selector"
         },
         AChecker: {
-            enable: true,
+            enable: false,
             reportFormat: "xpath",
         },
         Axe: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         },
         Wave: {

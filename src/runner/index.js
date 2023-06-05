@@ -21,20 +21,29 @@ const puppeteer = require("puppeteer");
  */
 
 exports.run = async (url) => {
-
+    logger.info(`Tool runner for ${url}`);
     const output = {
         url: url,
         timestamp: new Date(Date.now()),
         results: {}
     }
-    logger.info(`Tool runner for ${url}`);
+    for (const tool of Object.keys(tools))
+        if (config.get(`tools.${tool}.enable`))
+            output.results[tool] = {failures: []};
+
     try {
         const html = await utils.downloadHTML(url);
 
         const browser = await puppeteer.launch();
-        const page = await browser.newPage();
+        let page = await browser.newPage();
 
-        await page.goto(url, {waitUntil: 'load', timeout: 30 * 1000});
+        try {
+            await page.goto(url, {waitUntil: 'load', timeout: 30 * 1000});
+        } catch (e) {
+            logger.error(`Problem in loading the page in puppeteer: ${e}`);
+            logger.error('Setting page to null to proceed execution');
+            page = null;
+        }
 
         for (const tool of Object.keys(tools)) {
             if (config.get(`tools.${tool}.enable`)) {
@@ -42,11 +51,10 @@ exports.run = async (url) => {
                 try {
                     logger.info(`Running ${tool}`);
                     const result = await runner.run(url, html, transformer);
-                    logger.info(`Bundling pointers to elements`)
+                    logger.info(`Bundling pointers to elements`);
                     await bundleElements(tool, result, page, html);
                     output.results[tool] = {failures: result};
                 } catch (e) {
-                    output.results[tool] = {failures: []};
                     logger.error(`Problem in running ${tool} at ${url}: ${e}`);
                 }
             }
