@@ -1,5 +1,6 @@
 module.exports = {
-    websitesBaseURL: 'http://127.0.0.1:8080/results',
+    // websitesBaseURL: 'http://127.0.0.1:8080/results',
+    websitesBaseURL: 'https://mahantaf.github.io',
     tools: {
         QualWeb: {
             enable: true,
@@ -18,11 +19,11 @@ module.exports = {
             reportFormat: "complex-css-selector"
         },
         AChecker: {
-            enable: false,
+            enable: true,
             reportFormat: "xpath",
         },
         Axe: {
-            enable: false,
+            enable: true,
             reportFormat: "css-selector",
         },
         Wave: {
@@ -33,11 +34,11 @@ module.exports = {
             reportFormat: "xpath"
         },
         a11ywatchLite: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         },
         continuum: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         }
     }

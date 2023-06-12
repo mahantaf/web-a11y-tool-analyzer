@@ -18,11 +18,10 @@ const logger = require('./logger');
         for (const mutant of Object.keys(operatorResult[website])) {
             if (operatorResult[website][mutant] === 1) {
 
-                const originalURL = `${baseURL}/${website}/mutants/${mutant}/index.html`;
-                const mutatedURL = `${baseURL}/${website}/mutants/${mutant}/${mutant}.html`;
+                const originalURL = `${baseURL}/${website}/${mutant}_original.html`;
+                const mutatedURL = `${baseURL}/${website}/${mutant}.html`;
 
                 // TODO: Following two ops can be done at the same time using Promise.all() or Promise.allResolved()
-                console.log('url:'+originalURL);
                 const originalRunResults = await runner.run(originalURL);
                 const mutatedRunResults = await runner.run(mutatedURL);
 
@@ -30,5 +29,8 @@ const logger = require('./logger');
             }
         }
         fs.writeFileSync(path.join(__dirname, '../run_results', `${website}.json`), JSON.stringify(result));
+        break;
     }
+    console.log("Finished!");
+    logger.info('Tool Runner & Analyzer Done!');
 })();

@@ -15,10 +15,10 @@ const client = axios.create({
 exports.run = async (url, html, transformer) => {
 
     try {
-        // const { data } = await client.get("/api/request", { params: { url } });
+        const { data } = await client.get("/api/request", { params: { url } });
 
-        const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../wave.json')));
-        console.log(data);
+        // const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../wave.json')));
+        // console.log(data);
         if (data?.status?.success) {
             return transformer.transform(data, { url });
         }
