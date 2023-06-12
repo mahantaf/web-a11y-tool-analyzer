@@ -29,7 +29,6 @@ const logger = require('./logger');
             }
         }
         fs.writeFileSync(path.join(__dirname, '../run_results', `${website}.json`), JSON.stringify(result));
-        break;
     }
     console.log("Finished!");
     logger.info('Tool Runner & Analyzer Done!');
