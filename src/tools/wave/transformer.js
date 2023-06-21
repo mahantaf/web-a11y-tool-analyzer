@@ -12,7 +12,7 @@ exports.transform = (reports, { url }) => {
                 description: item?.description,
                 nodes: item?.xpaths.map(xpath => ({
                     htmlCode: null,
-                    pointer: xpath.toLowerCase().replace("html", "html[1]")
+                    pointer: xpath !== '#' ? xpath.toLowerCase().replace("html", "html[1]") : null
                 }))
               }
            }));

@@ -3,7 +3,7 @@ module.exports = {
     websitesBaseURL: 'https://mahantaf.github.io',
     tools: {
         QualWeb: {
-            enable: true,
+            enable: false,
             plugins: {
                 adBlock: true,
                 stealth: true
@@ -19,17 +19,17 @@ module.exports = {
             reportFormat: "complex-css-selector"
         },
         AChecker: {
-            enable: true,
+            enable: false,
             reportFormat: "xpath",
         },
         Axe: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         },
         Wave: {
             enable: false,
             baseURL: "https://wave.webaim.org",
-            apiKey: "EXq9hMiB3114",
+            apiKey: "Am25w6313114",
             reportType: "3",
             reportFormat: "xpath"
         },

@@ -42,6 +42,7 @@ const { access } = require('fs');
 async function setup() {
 	driver = new seleniumWebdriver.Builder()
 	.withCapabilities(seleniumWebdriver.Capabilities.chrome())
+	.setChromeOptions(new chrome.Options().headless())
 	.build();
   await Continuum.setUp(this.driver, require('path').resolve(__dirname, "./continuum.conf.js"), null);
 }
