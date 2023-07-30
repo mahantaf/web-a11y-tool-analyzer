@@ -1,11 +1,13 @@
 {
-  "name": "web-a11y-tool-analyzer",
+  "name": "web-a11y-mutation-framework",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "mutant-generator": "node src/mutant-generator/index.js",
+    "tool-runner": "node src/tool-runner/index.js"
   },
   "keywords": [],
   "author": "",
@@ -23,12 +25,22 @@
     "cheerio": "^1.0.0-rc.12",
     "chromedriver": "^114.0.1",
     "config": "^3.3.9",
+    "csv-parser": "^3.0.0",
     "cucumber": "6.0.5",
+    "exceljs": "^4.3.0",
     "global-agent": "2.1.8",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsdom": "^22.1.0",
     "puppeteer": "^20.2.1",
     "q": "1.5.1",
     "selenium-webdriver": "4.3.0",
     "uuid": "^9.0.0",
-    "winston": "^3.9.0"
+    "winston": "^3.9.0",
+    "xlsx-populate": "^1.21.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2"
   }
 }

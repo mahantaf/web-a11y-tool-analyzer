@@ -19,8 +19,13 @@ npm install
 
 ## Usage
 
-Command to run the tool
+Command to generate the mutation
 
 ```bash
-npm start
+npm run mutant-generator
+```
+Command to run the a11y testing tools
+
+```bash
+npm run tool-runner
 ```

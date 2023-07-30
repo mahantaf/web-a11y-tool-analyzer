@@ -129,6 +129,7 @@ dist
 .pnp.*
 
 # Project Specific
+src/runner/runner-debugger.js
 resources/**
 websites/
 run_results.json
