@@ -1,5 +1,5 @@
 module.exports = {
-    websitesBaseURL: 'https://mahantaf.github.io',
+    websitesBaseURL: 'http://localhost:8080',
     tools: {
         QualWeb: {
             enable: true,

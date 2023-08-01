@@ -71,12 +71,12 @@ const compare = (mutant, mainFailures, mutatedFailures) => {
 
 (async () => {
 
-    const mainFailures = await run('https://mahantaf.github.io/test.com/index.html');
+    const mainFailures = await run('http://localhost:8080/test.com/index.html');
 
     const data = JSON.parse('{"test.com":{"F2":1,"F22":1,"F24":1,"F25":1,"F3":1,"F30":1,"F32":1,"F36":1,"F37":1,"F4":1,"F42":1,"F44":1,"F54":1,"F55":1,"F65":1,"F68":1,"F73":1,"F77":1,"F78":1,"F80":1,"F89":1,"F9":1,"F91":1,"F94":1,"F96":1}}');
 
     for (const failure of Object.keys(data['test.com'])) {
-        const url = `https://mahantaf.github.io/test.com/${failure}.html`;
+        const url = `http://localhost:8080/test.com/${failure}.html`;
         const mutatedFailures = await run(url);
         compare(failure, mainFailures, mutatedFailures);
         fs.writeFileSync('runner_debugger.json', JSON.stringify(result));
