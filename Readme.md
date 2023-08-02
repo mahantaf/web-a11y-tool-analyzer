@@ -9,6 +9,12 @@
 - [Contributing](#contributing)
 - [License](#license)
 
+## Data Availability
+
+You can find the data including websites and operators list as well as
+applicability of the operators and the tool executions result in Analysis Artifacts.xslx in this
+repo.
+
 ## Installation
 
 Use the following command to install the dependencies
