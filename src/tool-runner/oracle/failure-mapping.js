@@ -80,7 +80,7 @@ module.exports = {
         continuum: '',
     },
     F42: {
-        QualWeb: '',
+        QualWeb: 'QW-WCAG-T26',
         AChecker: 'script_onclick_misuse',
         Axe: '',
         Wave: '',

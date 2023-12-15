@@ -1,5 +1,6 @@
 module.exports = {
-    websitesBaseURL: 'http://localhost:8080',
+    // websitesBaseURL: 'https://mahantaf.github.io',
+    websitesBaseURL: 'http://localhost:8080/results',
     tools: {
         QualWeb: {
             enable: true,
@@ -9,7 +10,7 @@ module.exports = {
             },
             clusterOptions: {
                 maxConcurrency: 5,
-                timeout: 60 * 1000,
+                timeout: 2 * 60 * 1000,
                 monitor: true
             },
             launchOptions: {
@@ -26,18 +27,18 @@ module.exports = {
             reportFormat: "css-selector",
         },
         Wave: {
-            enable: true,
+            enable: false,
             baseURL: "https://wave.webaim.org",
             apiKey: "Am25w6313114",
             reportType: "3",
             reportFormat: "xpath"
         },
         a11ywatchLite: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         },
         continuum: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         }
     }

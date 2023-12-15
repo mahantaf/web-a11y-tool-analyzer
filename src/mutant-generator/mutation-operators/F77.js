@@ -12,8 +12,7 @@ module.exports = {
     mutatedElement: null,
     originalElement: null,
     applicable: async function(page) {
-
-        const elements = await page.$$('body :not(script)');
+        const elements = await page.$$('body *:not(script):not(style)');
 
         if (elements.length >= 2) {
             for (let i = 0; i < elements.length - 1; ++i) {

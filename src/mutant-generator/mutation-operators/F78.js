@@ -7,6 +7,7 @@
  *
  */
 
+const {isVisibleAndAccessible} = require("./handler");
 module.exports = {
     title: 'F78',
     targetElement: null,
@@ -31,10 +32,13 @@ module.exports = {
                     }, focusedElement);
 
                     if (computedOutlineStyle !== 'none') {
-                        const aHandle = await focusedElement.asElement();
-                        this.targetElement = aHandle;
-                        this.originalElement = aHandle;
-                        return true;
+                        const visible = await isVisibleAndAccessible(page, focusedElement);
+                        if (visible) {
+                            const aHandle = await focusedElement.asElement();
+                            this.targetElement = aHandle;
+                            this.originalElement = aHandle;
+                            return true;
+                        }
                     }
                 }
             }

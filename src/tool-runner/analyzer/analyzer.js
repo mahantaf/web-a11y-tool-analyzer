@@ -2,15 +2,16 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
 const ExcelJS = require('exceljs');
-const mapping = require('./mapping');
+// const mapping = require('./mapping');
 
 (async () => {
 
-    const resultFile = fs.readFileSync(path.join(__dirname, '../', 'final_result_improved.json'));
+    const resultFile = fs.readFileSync(path.join(__dirname, '../../', 'final_result_improved.json'));
     const results = JSON.parse(resultFile);
 
-    const tools = ["QualWeb", "AChecker", "Axe", "continuum", "a11ywatchLite", "Wave"];
-    // const tools = ["a11ywatchLite", "continuum"];
+    // const tools = ["QualWeb", "AChecker", "Axe", "continuum", "a11ywatchLite", "Wave"];
+    const tools = ["QualWeb", "AChecker", "Axe"];
+
 
     for (const tool of tools) {
         console.log("Tool:", tool);
@@ -18,7 +19,7 @@ const mapping = require('./mapping');
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet('Data');
 
-        const readStream = fs.createReadStream(path.join(__dirname, '../resources', 'mutation_result.csv'));
+        const readStream = fs.createReadStream(path.join(__dirname, '../../../resources', 'mutation_result.csv'));
         const rows = [];
         try {
             await new Promise((resolve, reject) => {

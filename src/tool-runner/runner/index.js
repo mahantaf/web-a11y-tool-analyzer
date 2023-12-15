@@ -1,10 +1,10 @@
-const tools= require('../tools');
 const logger = require('../logger');
 const utils= require('../utils');
-
 const fs = require('fs');
 const config = require('config');
 const puppeteer = require("puppeteer");
+const tools= require('../tools');
+
 
 /**
  * Standard format for result

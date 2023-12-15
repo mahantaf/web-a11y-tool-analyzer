@@ -5,7 +5,7 @@ const failureMapping = require('./failure-mapping');
 const mapping = require('../mapping');
 
 const revise = () => {
-    const result = JSON.parse(fs.readFileSync(path.join(__dirname, '../../', 'final_result_improved_5.json')));
+    const result = JSON.parse(fs.readFileSync(path.join(__dirname, '../../', 'final_result.json')));
     for (const website in result) {
         for (let failure in result[website]) {
             for (const tool in result[website][failure]) {
@@ -25,7 +25,7 @@ const revise = () => {
             }
         }
     }
-    fs.writeFileSync(path.join(__dirname, '../../', 'final_result_improved_6.json'), JSON.stringify(result));
+    fs.writeFileSync(path.join(__dirname, '../../', 'final_result_improved.json'), JSON.stringify(result));
 }
 
 revise();

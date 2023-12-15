@@ -6,6 +6,9 @@
  * @Description:
  *
  */
+
+const { isVisibleAndAccessible } = require("./handler");
+
 module.exports = {
     title: 'F55',
     targetElement: null,
@@ -26,10 +29,13 @@ module.exports = {
                 const isAnchor = await page.evaluate((element) => element.tagName.toLowerCase() === 'a', focusedElement);
                 if (isAnchor) {
                     currentIndex++;
-                    const aHandle = await focusedElement.asElement();
-                    this.targetElement = aHandle;
-                    this.originalElement = aHandle;
-                    return true;
+                    const visible = await isVisibleAndAccessible(page, allAnchorTexts[currentIndex]);
+                    if (visible) {
+                        const aHandle = await focusedElement.asElement();
+                        this.targetElement = aHandle;
+                        this.originalElement = aHandle;
+                        return true;
+                    }
                 }
             }
         }

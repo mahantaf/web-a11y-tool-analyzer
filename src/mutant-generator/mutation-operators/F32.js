@@ -21,10 +21,10 @@ module.exports = {
                     const spanText = await span.getProperty('textContent');
                     const text = await spanText.jsonValue();
 
-                    if (text.split(/\s+/).length === 1) {
-                        const sHandle = span;
-                        this.targetElement = sHandle;
-                        this.originalElement = sHandle;
+                    if (text.trim().length > 0 && text.trim().split(' ').length === 1) {
+                        const iHandle = span;
+                        this.targetElement = iHandle;
+                        this.originalElement = iHandle;
                         return true;
                     }
                 }

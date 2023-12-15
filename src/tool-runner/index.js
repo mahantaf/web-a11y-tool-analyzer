@@ -1,14 +1,14 @@
 const config = require('config');
 const fs = require('fs');
-const runner = require('./runner');
 const oracle = require('./oracle');
 const path = require("path");
 const logger = require('./logger');
 const mapping = require('./mapping');
+const runner = require('./runner');
 
 (async () => {
     const baseURL = config.get('websitesBaseURL');
-    const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../resources', 'mutation_result.json')));
+    const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../../resources', 'mutation_result.json')));
 
     const result = {}
     logger.info('Tool Runner & Analyzer Started!');
@@ -39,7 +39,7 @@ const mapping = require('./mapping');
             console.log("Error happened while running for website")
             logger.error(`Error happened while running for website ${website}: ${e}`);
         }
-        fs.writeFileSync(path.join(__dirname, '../run_results', `${website}.json`), JSON.stringify(result));
+        fs.writeFileSync(path.join(__dirname, '../../run_results', `${website}.json`), JSON.stringify(result));
     }
     console.log("Finished!");
     logger.info('Tool Runner & Analyzer Done!');

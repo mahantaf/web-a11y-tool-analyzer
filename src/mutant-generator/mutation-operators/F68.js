@@ -52,6 +52,7 @@ module.exports = {
     apply: async function(page) {
 
         await this.targetElement.evaluate(element => {
+            element.removeAttribute('placeholder');
             const labelsToRemove = Array.from(element.labels);
             labelsToRemove.forEach((label) => label.remove());
         });

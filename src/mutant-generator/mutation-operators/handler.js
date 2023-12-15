@@ -16,7 +16,13 @@ const isVisibleAndAccessible = async (page, el) => {
         let hasHiddenParent = false;
         while (parent && parent.nodeType === Node.ELEMENT_NODE) {
             const style = getComputedStyle(parent);
-            if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
+            const parentAriaHidden = parent.getAttribute('aria-hidden');
+            if (
+                style.display === 'none' ||
+                style.visibility === 'hidden' ||
+                style.opacity === '0' ||
+                parentAriaHidden === 'true' // Check if parent has 'aria-hidden' set to true
+            ) {
                 hasHiddenParent = true;
                 break;
             }
