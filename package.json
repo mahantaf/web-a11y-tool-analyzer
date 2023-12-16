@@ -1,0 +1,46 @@
+{
+  "name": "web-a11y-mutation-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "mutant-generator": "node src/mutant-generator/index.js",
+    "tool-runner": "node src/tool-runner/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@a11ywatch/a11ywatch": "^0.1.40",
+    "@a11ywatch/crawler": "^0.8.5",
+    "@axe-core/puppeteer": "^4.7.1",
+    "@continuum/continuum-javascript-community": "file:./lib/continuum-continuum-javascript-community-5.1.0.tgz",
+    "@qualweb/core": "^0.7.33",
+    "accessibility-checker": "^3.1.63",
+    "accessibility-insights-report": "^4.6.6",
+    "axe-core": "^4.7.1",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "chromedriver": "^114.0.1",
+    "config": "^3.3.9",
+    "csv-parser": "^3.0.0",
+    "cucumber": "6.0.5",
+    "exceljs": "^4.3.0",
+    "global-agent": "2.1.8",
+    "jsdom": "^22.1.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "puppeteer": "^20.2.1",
+    "q": "1.5.1",
+    "selenium-webdriver": "4.3.0",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0",
+    "xlsx-populate": "^1.21.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
