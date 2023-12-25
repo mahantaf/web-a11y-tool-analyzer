@@ -10,6 +10,11 @@ const runner = require('./runner');
     const baseURL = config.get('websitesBaseURL');
     const operatorResult = JSON.parse(fs.readFileSync(path.join(__dirname, '../../resources', 'mutation_result.json')));
 
+    // Creating run_results/ directory if not exists
+    if (!fs.existsSync(path.join(__dirname, '../../run_results'))) {
+        fs.mkdirSync(path.join(__dirname, '../../run_results'));
+    }
+
     const result = {}
     logger.info('Tool Runner & Analyzer Started!');
 

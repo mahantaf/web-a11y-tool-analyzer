@@ -22,7 +22,10 @@ module.exports = {
                 const visible = await isVisibleAndAccessible(page, image);
                 if (visible) {
                     const isSuitableType = await page.evaluate(element => {
-                        const hasAltAttribute = element.hasAttribute('alt') && element.getAttribute('alt').trim() !== '';
+                        const hasAltAttribute =
+                            element.hasAttribute('alt') &&
+                            element.getAttribute('alt').trim() !== ''
+                            !utils.checkTrivialAlts(element.getAttribute('alt'));
                         const isNestedInsideAnchor = element.closest('a') !== null;
                         const hasOffset = element.offsetWidth > 0 && element.offsetHeight > 0;
 

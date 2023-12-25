@@ -4,6 +4,21 @@
 
 Ma11y is a pioneering mutation analysis framework designed to evaluate the effectiveness of web accessibility testing tools. It addresses the significant gap in identifying accessibility issues on many websites, as current tools fail to detect nearly 50% of such issues. Ma11y operates through three main components: the Mutant Generator, the Tool Runner, and the Oracle.
 
+## Table of Contents
+
+   * [Components](#components)
+      * [1. Mutant Generator](#1-mutant-generator)
+      * [2. Tool Runner](#2-tool-runner)
+      * [3. Oracle](#3-oracle)
+   * [Application and Evaluation](#application-and-evaluation)
+   * [Using Ma11y](#using-ma11y)
+      * [Installation](#installation)
+      * [Mutant Generator](#mutant-generator)
+      * [Tool Runner](#tool-runner)
+   * [Future Directions](#future-directions)
+
+## Components
+
 ### 1. Mutant Generator
 
 This component applies 25 mutation operators based on the WCAG 2.1 accessibility guidelines to the target website. The implementation leverages Puppeteer, a JavaScript-based headless browser, to manage dynamic website elements and prevent the creation of equivalent mutants. Key functionalities include:
@@ -34,21 +49,63 @@ Ma11y has been rigorously evaluated on real-world websites. It highlights the ne
 
 ## Using Ma11y
 
-To use Ma11y for assessing a website's accessibility:
+### Installation
 
-1. Prepare the website to be compatible with Ma11y's requirements.
-2. Run the Mutant Generator to apply mutation operators.
-3. Execute the Tool Runner with integrated accessibility testing tools.
-4. Utilize the Oracle to analyze the effectiveness of these tools.
+Before running Ma11y, ensure that you have the latest version of Node.js installed. Then, clone the repository and install the dependencies:
+
+```bash
+npm install
+```
+
+Ma11y has two main parts:
+1. Mutant Generator
+2. Tool Runner
+
+### Mutant Generator
+
+Mutant Generator uses website HTML files as an input and applies mutation operators to them. Before running the Mutant Generator, you should put the websites' HTML files in the `resources/final_websites` folder. Create a folder for each website and put the HTML file (index.html) along with CSS, Javascript and all static files inside the folder.
+So the content of the `resources/final_websites` folder should look like this:
+    
+    resources/final_websites
+    ├── website1
+    │   ├── index.html
+    │   ├── css (optional)
+    │   │   └── style.css
+    │   ├── js (optional)
+    │   │   └── script.js
+    │   └── static (optional)
+    │       └── image.png
+    └── website2
+        ├── index.html
+        ├── css
+        │   └── style.css
+        ├── js
+        │   └── script.js
+        └── static
+            └── image.png
+
+After putting the input websites you can run the following command to apply mutation operators to them:
+
+```bash
+npm run mutant-generator
+```
+It will create a `results/` directory in the project root and put the mutated websites in it.
+Now that you have the mutants you can run the Tool Runner. However, before running the tool runner you need to serve them either on a server or locally.
+
+Note: If you want to serve the websites locally, make sure to disable WAVE in the configuration file. WAVE does not work on local websites.
+
+### Tool Runner
+
+After serving the websites configure the `websitesBaseURL` in the `config.json` file. Then, run the following command to run the Tool Runner:
+
+```bash
+npm run tool-runner
+```
+
+It will create a directory named `run_results/` in the project root and put the result in a JSON format in it.
+
+Note: Running a tool runner may take a long time. You can always monitor the progress by tailing the info.log file in the project root.
 
 ## Future Directions
 
 Ma11y sets the stage for the development of more advanced accessibility testing tools. Researchers and developers can contribute by integrating new tools and enhancing the mutation operators and evaluation methods.
-
-## Conclusion
-
-Ma11y marks a significant advancement in web accessibility testing, highlighting the need for more sophisticated tools to create a universally accessible digital environment.
-
----
-
-*For detailed information about each component and the evaluation process, refer to the respective sections in the project documentation.*
