@@ -109,6 +109,45 @@ npm run tool-runner
 
 It will create a directory named `run_results/` in the project root and put the result in a JSON format in it.
 
+For each website you will have a JSON file with the following format:
+```json
+{
+     "website": {
+          "mutation-operator-1": {
+               "tool-1": {
+                    "originalIssues": {
+                         "element": "mutatedElement",
+                         "failures": ["Array of failures"]
+                    },
+                    "mutatedIssues": {
+                         "element": "mutatedElement",
+                         "failures": ["Array of failures"]
+                    },
+                    "newIssues": [],
+                    "killed": 0
+               },
+               "tool-2": {
+                    "originalIssues": {
+                         "element": "mutatedElement",
+                         "failures": ["Array of failures"]
+                    },
+                    "mutatedIssues": {
+                         "element": "mutatedElement",
+                         "failures": ["Array of failures"]
+                    },
+                    "newIssues": [],
+                    "killed": 1
+               }
+          }
+     }
+}
+```
+
+For each mutant of a website it contains the run results of the tools.
+Each run result has `original_issues` which shows the accessibility issues detected by the tool of the targeted element before mutation,
+`mutated_issue` which shows the accessibility issues of the mutated version,
+`new_issues` is a set equals to `mutated_issues - original_issues`, and a `killed` attribute that determines whether the tool could detect the issue or not. 
+
 Note: Running a tool runner may take a long time. You can always monitor the progress by tailing the info.log file in the project root.
 
 ## Future Directions
