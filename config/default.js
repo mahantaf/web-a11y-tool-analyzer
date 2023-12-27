@@ -1,9 +1,8 @@
 module.exports = {
-    // websitesBaseURL: 'https://mahantaf.github.io',
     websitesBaseURL: 'http://localhost:8080/results',
     tools: {
         QualWeb: {
-            enable: true,
+            enable: false,
             plugins: {
                 adBlock: true,
                 stealth: true
@@ -23,7 +22,7 @@ module.exports = {
             reportFormat: "xpath",
         },
         Axe: {
-            enable: true,
+            enable: false,
             reportFormat: "css-selector",
         },
         Wave: {

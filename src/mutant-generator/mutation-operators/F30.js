@@ -24,8 +24,7 @@ module.exports = {
                     const isSuitableType = await page.evaluate(element => {
                         const hasAltAttribute =
                             element.hasAttribute('alt') &&
-                            element.getAttribute('alt').trim() !== ''
-                            !utils.checkTrivialAlts(element.getAttribute('alt'));
+                            element.getAttribute('alt').trim() !== '';
                         const isNestedInsideAnchor = element.closest('a') !== null;
                         const hasOffset = element.offsetWidth > 0 && element.offsetHeight > 0;
 

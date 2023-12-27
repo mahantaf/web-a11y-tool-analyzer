@@ -57,6 +57,11 @@ Before running Ma11y, ensure that you have the latest version of Node.js install
 npm install
 ```
 
+After installing the dependencies you should manually install Chromium version using the following command:
+```bash
+node node_modules/puppeteer/install.js
+```
+
 Ma11y has two main parts:
 1. Mutant Generator
 2. Tool Runner

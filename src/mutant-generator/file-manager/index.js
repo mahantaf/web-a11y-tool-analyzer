@@ -66,5 +66,5 @@ exports.saveHtml = (website, html, operator, original) => {
 }
 
 exports.saveResult = (result) => {
-    fs.writeFileSync(path.join(__dirname, '../../../resources/', 'mutant_result.json'), result);
+    fs.writeFileSync(path.join(__dirname, '../../../resources/', 'mutation_result.json'), result);
 }

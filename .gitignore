@@ -130,6 +130,7 @@ dist
 
 # Project Specific
 src/runner/runner-debugger.js
+resources/mutation_result.json
 websites/
 run_results.json
 result/
