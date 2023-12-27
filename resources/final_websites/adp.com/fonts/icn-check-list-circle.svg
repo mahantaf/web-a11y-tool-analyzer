@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M2.7846403,5.92941178 L0,3.12289156 L1.41737991,1.69411765 L4.2020202,4.50063785 L2.7846403,5.92941178 Z M4.75870142,8.04705881 L3.36161616,6.63891068 L9.94836927,0 L11.3454545,1.40814816 L4.75870142,8.04705881 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="circle" transform="translate(-4.000000, -4.000000)">
+            <ellipse id="Oval" cx="16.3636364" cy="17.3913043" rx="10" ry="10.7608696"></ellipse>
+            <g id="Iconography-/-UI-icons-/-circle" transform="translate(15.680830, 16.265810) rotate(-90.000000) translate(-15.680830, -16.265810) translate(3.680830, 4.265810)" fill="#D0271D">
+                <g id="Circle">
+                    <path d="M12.2102273,3.0642663 C7.13757727,3.0642663 3.01022727,7.1916163 3.01022727,12.2642663 C3.01022727,17.3369163 7.13757727,21.4642663 12.2102273,21.4642663 C17.2828773,21.4642663 21.4102273,17.3369163 21.4102273,12.2642663 C21.4102273,7.1916163 17.2828773,3.0642663 12.2102273,3.0642663 M12.2102273,23.7642663 C5.86912727,23.7642663 0.710227273,18.6053663 0.710227273,12.2642663 C0.710227273,5.9231663 5.86912727,0.764266304 12.2102273,0.764266304 C18.5513273,0.764266304 23.7102273,5.9231663 23.7102273,12.2642663 C23.7102273,18.6053663 18.5513273,23.7642663 12.2102273,23.7642663" id="path-1"></path>
+                </g>
+            </g>
+            <g id="icn-check-thick-blue" transform="translate(0.363636, 0.000000)">
+                <polygon id="Fill-1" points="0 30 29.0909091 30 29.0909091 0 0 0"></polygon>
+                <g id="Color-1" transform="translate(9.090909, 12.187500)">
+                    <g id="Color-/-7D3520_brown-Clipped" transform="translate(0.472727, 0.500000)">
+                        <g>
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="path-1"></g>
+                            <g id="Color-/-7D3520_brown" mask="url(#mask-2)">
+                                <g transform="translate(-2.462121, -3.970588)" id="Rectangle">
+                                    <g>
+                                        <g id="Group" transform="translate(0.256061, 0.264706)" fill="#2C3688">
+                                            <rect id="Rectangle" x="0" y="0" width="15.7575758" height="15.8823529"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

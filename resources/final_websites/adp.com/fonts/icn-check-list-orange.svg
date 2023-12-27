@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icn-check-list-red</title>
+    <defs>
+        <path d="M20.7078201,0.633333333 L23.4333333,3.08275251 L9.76667387,18.2801464 L7.04238216,15.8295055 L20.7078201,0.633333333 Z M3.07420092,7.13938161 L8.18524487,11.8914639 L5.74437727,14.6255287 L0.633333333,9.87344652 L3.07420092,7.13938161 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icn-check-list-red">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="path-1"></g>
+            <rect id="Rectangle" fill="#F15C22" fill-rule="nonzero" mask="url(#mask-2)" x="-3.8" y="-6.33333333" width="31.6666667" height="31.6666667"></rect>
+        </g>
+    </g>
+</svg>

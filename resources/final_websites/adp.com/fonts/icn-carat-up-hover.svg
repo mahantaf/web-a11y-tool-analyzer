@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icn-carat-up-ui</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icn-carat-up-ui" fill="#0041DC" fill-rule="nonzero">
+            <g id="icn-carat-down-ui" transform="translate(6.500000, 4.000000) rotate(180.000000) translate(-6.500000, -4.000000) translate(-0.000000, 0.000000)">
+                <g id="Group" transform="translate(6.500001, 4.000000) scale(-1, 1) translate(-6.500001, -4.000000) translate(0.000001, 0.000000)">
+                    <polygon id="Arrow" transform="translate(6.499994, 4.000000) scale(-1, 1) rotate(90.000000) translate(-6.499994, -4.000000) " points="3.8929259 10.4999932 2.499994 9.12963518 7.71413019 3.99999958 2.499994 -1.12963603 3.8929259 -2.499994 10.499994 3.99999958"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
