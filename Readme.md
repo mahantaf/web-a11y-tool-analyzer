@@ -144,9 +144,15 @@ For each website you will have a JSON file with the following format:
 ```
 
 For each mutant of a website it contains the run results of the tools.
-Each run result has `original_issues` which shows the accessibility issues detected by the tool of the targeted element before mutation,
-`mutated_issue` which shows the accessibility issues of the mutated version,
-`new_issues` is a set equals to `mutated_issues - original_issues`, and a `killed` attribute that determines whether the tool could detect the issue or not. 
+Each run result has the following parameters:
+
+| Parameter        | Definition                                                                                         |
+|------------------|----------------------------------------------------------------------------------------------------|
+| `originalIssues` | Shows the accessibility issues detected by the tool of the targeted element before mutation.       |
+| `mutatedIssues`  | Shows the accessibility issues of the mutated version of the element.                              |
+| `newIssues`      | A set representing the difference between `mutatedIssues` and `originalIssues`.                    |
+| `killed`         | A boolean attribute indicating whether the tool could detect the issue (1) or not (0).             |
+
 
 Note: Running a tool runner may take a long time. You can always monitor the progress by tailing the info.log file in the project root.
 
